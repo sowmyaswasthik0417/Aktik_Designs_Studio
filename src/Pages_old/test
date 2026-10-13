@@ -1,0 +1,1116 @@
+import React, { useEffect } from "react";
+
+const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/place/Aktik+Designs/@12.8718378,74.8519083,17z/data=!4m8!3m7!1s0x3ba35b5428751c99:0x4c3301db078adf14!8m2!3d12.8718378!4d74.8519083!9m1!1b1";
+
+const WRITE_REVIEW_URL =
+  "https://search.google.com/local/writereview?placeid=ChIJmRx1KFRbozsRFN-KB9sBM0w";
+
+export default function Testimonials() {
+  {/* Hide Elfsight "Free Google Reviews Widget" badge */}
+<style>{`
+  .eapps-widget-toolbar,
+  .eapps-widget-toolbar-button,
+  a[href*="elfsight.com"],
+  [class*="eapps-google-reviews-toolbar"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
+  }
+`}</style>
+  /*
+   * Load Elfsight Google Reviews script once.
+   */
+  useEffect(() => {
+    const scriptId = "elfsight-platform-script";
+
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+
+      script.id = scriptId;
+      script.src = "https://elfsightcdn.com/platform.js";
+      script.async = true;
+
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  return (
+    <div>
+      {/* =========================================================
+          PAGE HEADER START
+      ========================================================= */}
+      <div className="page-header dark-section parallaxie">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="page-header-box">
+                <h1 className="text-anime-style-3" data-cursor="-opaque">
+                  Testimonials
+                </h1>
+
+                <nav className="wow fadeInUp">
+                  <ol className="breadcrumb">
+                    <li className="breadcrumb-item">
+                      <a href="/">Home</a>
+                    </li>
+
+                    <li
+                      className="breadcrumb-item active"
+                      aria-current="page"
+                    >
+                      Testimonials
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* =========================================================
+          PAGE HEADER END
+      ========================================================= */}
+
+
+      {/* =========================================================
+          GOOGLE TESTIMONIALS SECTION START
+      ========================================================= */}
+      <div className="page-testimonials">
+        <div className="container">
+
+          {/* Section Heading */}
+          <div className="row section-row">
+            <div className="col-lg-12">
+              <div className="section-title section-title-center">
+
+                <span className="section-sub-title wow fadeInUp">
+                  Google Reviews
+                </span>
+
+                <h2
+                  className="text-anime-style-3"
+                  data-cursor="-opaque"
+                >
+                  What Our Customers Say On Google
+                </h2>
+
+                {/* Google Rating */}
+                <div
+                  style={{
+                    marginTop: "18px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "10px",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  {/* Rating */}
+                  <span
+                    style={{
+                      fontSize: "24px",
+                      fontWeight: "800",
+                      color: "#111",
+                    }}
+                  >
+                    5.0
+                  </span>
+
+                  {/* Stars */}
+                  <span
+                    style={{
+                      color: "#fbbc04",
+                      fontSize: "22px",
+                      letterSpacing: "2px",
+                    }}
+                  >
+                    ★★★★★
+                  </span>
+
+                  <span
+                    style={{
+                      color: "#555",
+                      fontWeight: "600",
+                      fontSize: "15px",
+                    }}
+                  >
+                    Google Reviews
+                  </span>
+
+                  {/* Google Maps Button */}
+                  <a
+                    href={GOOGLE_MAPS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      marginLeft: "6px",
+                      padding: "6px 14px",
+                      background: "#4285F4",
+                      color: "#fff",
+                      borderRadius: "20px",
+                      fontSize: "13px",
+                      fontWeight: "600",
+                      textDecoration: "none",
+                      boxShadow:
+                        "0 2px 6px rgba(66,133,244,0.3)",
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    <i className="fa-brands fa-google"></i>
+                    View on Google Maps
+                  </a>
+
+                  {/* Write Review Button */}
+                  <a
+                    href={WRITE_REVIEW_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      marginLeft: "4px",
+                      padding: "6px 14px",
+                      background: "#fff",
+                      color: "#1a73e8",
+                      border: "1px solid #dadce0",
+                      borderRadius: "20px",
+                      fontSize: "13px",
+                      fontWeight: "600",
+                      textDecoration: "none",
+                      boxShadow:
+                        "0 1px 3px rgba(0,0,0,0.08)",
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    <i className="fa-solid fa-pen-to-square"></i>
+                    Write a Review
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          {/* =====================================================
+              ELFSIGHT GOOGLE REVIEWS WIDGET
+          ===================================================== */}
+          <div className="row">
+            <div className="col-lg-12">
+
+              <div
+                style={{
+                  width: "100%",
+                  minHeight: "400px",
+                }}
+              >
+                <div
+                  className="elfsight-app-87fd69a6-4842-4c84-aeb5-658e7e2078ed"
+                  data-elfsight-app-lazy
+                ></div>
+              </div>
+
+            </div>
+          </div>
+
+
+          {/* =====================================================
+              BOTTOM REVIEW CTA
+          ===================================================== */}
+          <div className="row mt-4">
+            <div className="col-lg-12">
+
+              <div
+                style={{
+                  background:
+                    "linear-gradient(135deg, #1f2937 0%, #111827 100%)",
+                  borderRadius: "16px",
+                  padding: "36px 30px",
+                  color: "#fff",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  flexWrap: "wrap",
+                  gap: "20px",
+                }}
+              >
+
+                {/* CTA Text */}
+                <div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: "#fbbc04",
+                        fontSize: "18px",
+                      }}
+                    >
+                      ★★★★★
+                    </span>
+
+                    <span
+                      style={{
+                        fontWeight: "700",
+                        fontSize: "16px",
+                      }}
+                    >
+                      Google Reviews
+                    </span>
+                  </div>
+
+                  <p
+                    style={{
+                      margin: 0,
+                      color: "#9ca3af",
+                      fontSize: "14px",
+                    }}
+                  >
+                    Experience the Aktik Designs difference for your
+                    home, villa, or commercial space in Mangalore.
+                  </p>
+                </div>
+
+
+                {/* CTA Buttons */}
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "12px",
+                    flexWrap: "wrap",
+                  }}
+                >
+
+                  {/* Write Review */}
+                  <a
+                    href={WRITE_REVIEW_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-default"
+                    style={{
+                      backgroundColor: "#4285F4",
+                      borderColor: "#4285F4",
+                      color: "#fff",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      padding: "12px 24px",
+                    }}
+                  >
+                    <i className="fa-brands fa-google"></i>
+                    Write a Review
+                  </a>
+
+
+                  {/* Read Google Reviews */}
+                  <a
+                    href={GOOGLE_MAPS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-default btn-border"
+                    style={{
+                      color: "#fff",
+                      borderColor:
+                        "rgba(255,255,255,0.3)",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      padding: "12px 24px",
+                    }}
+                  >
+                    Read on Google Maps
+                  </a>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {/* =========================================================
+          GOOGLE TESTIMONIALS SECTION END
+      ========================================================= */}
+
+
+      {/* =========================================================
+          INTRO VIDEO SECTION START
+      ========================================================= */}
+      <div className="intro-video dark-section">
+
+        <div className="intro-video-bg-video">
+          <video
+            autoPlay
+            muted
+            playsInline
+            loop
+            id="introvideo"
+          >
+            <source
+              src="https://demo.awaikenthemes.com/assets/videos/livora-intro-video.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+
+        <div className="container">
+          <div className="row align-items-center">
+
+            <div className="col-xl-6 col-md-9">
+              <div className="section-title">
+
+                <span className="section-sub-title wow fadeInUp">
+                  Product Video
+                </span>
+
+                <h2
+                  className="text-anime-style-3"
+                  data-cursor="-opaque"
+                >
+                  Watch Products Designed For Modern Living
+                </h2>
+
+              </div>
+            </div>
+
+
+            <div className="col-xl-6 col-md-3">
+              <div className="intro-video-circle">
+
+                <a
+                  href="https://www.youtube.com/watch?v=Y-x0efG1seA"
+                  className="popup-video"
+                  data-cursor-text="Play"
+                >
+                  <img
+                    src="/assets/images/intro-video-circle.svg"
+                    alt="Play Video"
+                  />
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      {/* =========================================================
+          INTRO VIDEO SECTION END
+      ========================================================= */}
+
+
+      {/* =========================================================
+          TRENDING PRODUCTS SECTION START
+      ========================================================= */}
+      <div className="our-trending-products">
+        <div className="container">
+
+          <div className="row section-row">
+            <div className="col-lg-12">
+
+              <div className="section-title section-title-center">
+
+                <span className="section-sub-title wow fadeInUp">
+                  Trending Now
+                </span>
+
+                <h2
+                  className="text-anime-style-3"
+                  data-cursor="-opaque"
+                >
+                  Trending Space Inspirations
+                </h2>
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <div className="row">
+            <div className="col-lg-12">
+
+              <div className="trending-product-item-boxes">
+
+                {/* Office */}
+                <div className="trending-product-item wow fadeInUp">
+
+                  <div className="trending-product-item-image">
+                    <a
+                      href="/Services"
+                      data-cursor-text="View"
+                    >
+                      <figure className="image-anime">
+                        <img
+                          src="/assets/images/trending-product-image-1.jpg"
+                          alt="Office"
+                        />
+                      </figure>
+                    </a>
+                  </div>
+
+                  <div className="trending-product-item-content">
+                    <h3>
+                      <a href="/Services">OFFICE</a>
+                    </h3>
+
+                    <p>
+                      Designed For Productive <b>Living</b>
+                    </p>
+                  </div>
+
+                </div>
+
+
+                {/* Chairs */}
+                <div
+                  className="trending-product-item wow fadeInUp"
+                  data-wow-delay="0.2s"
+                >
+
+                  <div className="trending-product-item-image">
+                    <a
+                      href="/Services"
+                      data-cursor-text="View"
+                    >
+                      <figure className="image-anime">
+                        <img
+                          src="/assets/images/trending-product-image-2.jpg"
+                          alt="Chairs"
+                        />
+                      </figure>
+                    </a>
+                  </div>
+
+                  <div className="trending-product-item-content">
+                    <h3>
+                      <a href="/Services">CHAIRS</a>
+                    </h3>
+
+                    <p>
+                      Comfort Meets Timeless <b>Style</b>
+                    </p>
+                  </div>
+
+                </div>
+
+
+                {/* Sofas */}
+                <div
+                  className="trending-product-item wow fadeInUp"
+                  data-wow-delay="0.4s"
+                >
+
+                  <div className="trending-product-item-image">
+                    <a
+                      href="/Services"
+                      data-cursor-text="View"
+                    >
+                      <figure className="image-anime">
+                        <img
+                          src="/assets/images/trending-product-image-3.jpg"
+                          alt="Sofas"
+                        />
+                      </figure>
+                    </a>
+                  </div>
+
+                  <div className="trending-product-item-content">
+                    <h3>
+                      <a href="/Services">SOFAS</a>
+                    </h3>
+
+                    <p>
+                      Create Moments Of <b>Togetherness</b>
+                    </p>
+                  </div>
+
+                </div>
+
+
+                {/* Luxury Sofa */}
+                <div
+                  className="product-offer-item box-1 wow fadeInUp"
+                  data-wow-delay="0.6s"
+                >
+
+                  <div className="product-offer-item-content">
+
+                    <div className="product-offer-item-header-content">
+                      <span>UP TO 50% OFF</span>
+
+                      <h3>
+                        <a href="/Services">
+                          Luxury Sofa
+                        </a>
+                      </h3>
+
+                      <p>Elegant Modern Comfort</p>
+                    </div>
+
+                    <div className="product-offer-item-body-content">
+                      <p>Starting from</p>
+                      <h3>$899</h3>
+                    </div>
+
+                  </div>
+
+                  <div className="product-offer-item-image">
+                    <figure>
+                      <img
+                        src="/assets/images/product-offer-image-1.png"
+                        alt="Luxury Sofa Offer"
+                      />
+                    </figure>
+                  </div>
+
+                </div>
+
+
+                {/* Modern Desk */}
+                <div
+                  className="product-offer-item box-2 wow fadeInUp"
+                  data-wow-delay="0.8s"
+                >
+
+                  <div className="product-offer-item-content">
+
+                    <div className="product-offer-item-header-content">
+                      <span>UP TO 40% OFF</span>
+
+                      <h3>
+                        <a href="/Services">
+                          Modern Desk
+                        </a>
+                      </h3>
+
+                      <p>Smart Workspaces</p>
+                    </div>
+
+                    <div className="product-offer-item-body-content">
+                      <p>Starting from</p>
+                      <h3>$399</h3>
+                    </div>
+
+                  </div>
+
+                  <div className="product-offer-item-image">
+                    <figure>
+                      <img
+                        src="/assets/images/product-offer-image-2.png"
+                        alt="Modern Desk Offer"
+                      />
+                    </figure>
+                  </div>
+
+                </div>
+
+
+                {/* Dining Set */}
+                <div
+                  className="product-offer-item box-3 wow fadeInUp"
+                  data-wow-delay="1s"
+                >
+
+                  <div className="product-offer-item-content">
+
+                    <div className="product-offer-item-header-content">
+                      <span>UP TO 35% OFF</span>
+
+                      <h3>
+                        <a href="/Services">
+                          Dining Set
+                        </a>
+                      </h3>
+
+                      <p>Elegant Dining</p>
+                    </div>
+
+                    <div className="product-offer-item-body-content">
+                      <p>Starting from</p>
+                      <h3>$649</h3>
+                    </div>
+
+                  </div>
+
+                  <div className="product-offer-item-image">
+                    <figure>
+                      <img
+                        src="/assets/images/product-offer-image-3.png"
+                        alt="Dining Set Offer"
+                      />
+                    </figure>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {/* =========================================================
+          TRENDING PRODUCTS SECTION END
+      ========================================================= */}
+
+
+      {/* =========================================================
+          OUR APPROACH SECTION START
+      ========================================================= */}
+      <div className="our-approach light-section">
+
+        <div className="container">
+
+          <div className="row section-row">
+
+            <div className="col-lg-12">
+
+              <div className="approach-title-box">
+
+                <div className="section-title section-title-center">
+
+                  <span className="section-sub-title wow fadeInUp">
+                    Our Approach
+                  </span>
+
+                  <h2
+                    className="text-anime-style-3"
+                    data-cursor="-opaque"
+                  >
+                    Thoughtfully Designed For Modern Living
+                  </h2>
+
+                </div>
+
+
+                <div
+                  className="approach-title-list wow fadeInUp"
+                  data-wow-delay="0.2s"
+                >
+                  <ul>
+                    <li>Design With Purpose</li>
+                    <li>Premium Material</li>
+                    <li>Expert Craftsmanship</li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <div className="row">
+
+            <div className="col-lg-12">
+
+              <div className="approach-item-list">
+
+                {/* Design */}
+                <div className="approach-item wow fadeInUp">
+
+                  <div className="approach-item-image-box">
+
+                    <div className="approach-item-image">
+                      <figure className="image-anime">
+                        <img
+                          src="/assets/images/approach-item-image-1.jpg"
+                          alt="Design"
+                        />
+                      </figure>
+                    </div>
+
+                    <div className="approach-item-tag">
+                      <a href="#">UP TO 40% OFF</a>
+                    </div>
+
+                  </div>
+
+                  <div className="approach-item-content">
+                    <h3>Design With Purpose</h3>
+
+                    <p>
+                      Only high-quality materials are chosen to ensure
+                      durability and long-lasting performance.
+                    </p>
+                  </div>
+
+                </div>
+
+
+                {/* Materials */}
+                <div
+                  className="approach-item wow fadeInUp"
+                  data-wow-delay="0.2s"
+                >
+
+                  <div className="approach-item-image-box">
+
+                    <div className="approach-item-image">
+                      <figure className="image-anime">
+                        <img
+                          src="/assets/images/approach-item-image-2.jpg"
+                          alt="Premium Materials"
+                        />
+                      </figure>
+                    </div>
+
+                    <div className="approach-item-tag">
+                      <a href="#">UP TO 40% OFF</a>
+                    </div>
+
+                  </div>
+
+                  <div className="approach-item-content">
+                    <h3>Premium Material Selection</h3>
+
+                    <p>
+                      Only high-quality materials are chosen to ensure
+                      durability and long-lasting performance.
+                    </p>
+                  </div>
+
+                </div>
+
+
+                {/* Craftsmanship */}
+                <div
+                  className="approach-item wow fadeInUp"
+                  data-wow-delay="0.4s"
+                >
+
+                  <div className="approach-item-image-box">
+
+                    <div className="approach-item-image">
+                      <figure className="image-anime">
+                        <img
+                          src="/assets/images/approach-item-image-3.jpg"
+                          alt="Expert Craftsmanship"
+                        />
+                      </figure>
+                    </div>
+
+                    <div className="approach-item-tag">
+                      <a href="#">UP TO 40% OFF</a>
+                    </div>
+
+                  </div>
+
+                  <div className="approach-item-content">
+                    <h3>Expert Craftsmanship</h3>
+
+                    <p>
+                      Only high-quality materials are chosen to ensure
+                      durability and long-lasting performance.
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {/* =========================================================
+          OUR APPROACH SECTION END
+      ========================================================= */}
+
+
+      {/* =========================================================
+          FAQ SECTION START
+      ========================================================= */}
+      <div className="our-faqs">
+
+        <div className="container">
+
+          <div className="row">
+
+            {/* FAQ Left */}
+            <div className="col-xl-6">
+
+              <div className="faq-content-box">
+
+                <div className="section-title">
+
+                  <span className="section-sub-title wow fadeInUp">
+                    Frequently Asked Questions
+                  </span>
+
+                  <h2
+                    className="text-anime-style-3"
+                    data-cursor="-opaque"
+                  >
+                    Common Questions About Furniture Collections
+                  </h2>
+
+                  <p
+                    className="wow fadeInUp"
+                    data-wow-delay="0.2s"
+                  >
+                    Find quick answers to the most common questions
+                    about our furniture collections, including
+                    materials, sizes, customization, and delivery.
+                  </p>
+
+                </div>
+
+
+                <div
+                  className="faq-content-button wow fadeInUp"
+                  data-wow-delay="0.4s"
+                >
+                  <a
+                    href="/Contact"
+                    className="btn-default"
+                  >
+                    Contact Us
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* FAQ Right */}
+            <div className="col-xl-6">
+
+              <div
+                className="faq-accordion"
+                id="accordion"
+              >
+
+                {/* FAQ 1 */}
+                <div className="accordion-item wow fadeInUp">
+
+                  <h2
+                    className="accordion-header"
+                    id="heading1"
+                  >
+                    <button
+                      className="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse1"
+                      aria-expanded="true"
+                      aria-controls="collapse1"
+                    >
+                      1. What types of furniture does Aktik Designs offer?
+                    </button>
+                  </h2>
+
+                  <div
+                    id="collapse1"
+                    className="accordion-collapse collapse show"
+                    role="region"
+                    aria-labelledby="heading1"
+                    data-bs-parent="#accordion"
+                  >
+                    <div className="accordion-body">
+                      <p>
+                        Aktik Designs offers a wide range of furniture
+                        including sofas, beds, dining tables, chairs,
+                        storage solutions, office furniture, and custom
+                        home décor accessories.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                {/* FAQ 2 */}
+                <div
+                  className="accordion-item wow fadeInUp"
+                  data-wow-delay="0.2s"
+                >
+
+                  <h2
+                    className="accordion-header"
+                    id="heading2"
+                  >
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse2"
+                      aria-expanded="false"
+                      aria-controls="collapse2"
+                    >
+                      2. Do you provide custom furniture options?
+                    </button>
+                  </h2>
+
+                  <div
+                    id="collapse2"
+                    className="accordion-collapse collapse"
+                    role="region"
+                    aria-labelledby="heading2"
+                    data-bs-parent="#accordion"
+                  >
+                    <div className="accordion-body">
+                      <p>
+                        Yes, our experienced team provides custom
+                        dimension, fabric, and finish tailoring to match
+                        your interior architecture and aesthetic vision.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                {/* FAQ 3 */}
+                <div
+                  className="accordion-item wow fadeInUp"
+                  data-wow-delay="0.4s"
+                >
+
+                  <h2
+                    className="accordion-header"
+                    id="heading3"
+                  >
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse3"
+                      aria-expanded="false"
+                      aria-controls="collapse3"
+                    >
+                      3. What materials are used in Aktik Designs furniture?
+                    </button>
+                  </h2>
+
+                  <div
+                    id="collapse3"
+                    className="accordion-collapse collapse"
+                    role="region"
+                    aria-labelledby="heading3"
+                    data-bs-parent="#accordion"
+                  >
+                    <div className="accordion-body">
+                      <p>
+                        We use solid seasoned hardwoods, premium veneers,
+                        high-grade metals, and durable upholstery fabrics
+                        curated for beauty and longevity.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                {/* FAQ 4 */}
+                <div
+                  className="accordion-item wow fadeInUp"
+                  data-wow-delay="0.6s"
+                >
+
+                  <h2
+                    className="accordion-header"
+                    id="heading4"
+                  >
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse4"
+                      aria-expanded="false"
+                      aria-controls="collapse4"
+                    >
+                      4. Do you offer home delivery and installation services?
+                    </button>
+                  </h2>
+
+                  <div
+                    id="collapse4"
+                    className="accordion-collapse collapse"
+                    role="region"
+                    aria-labelledby="heading4"
+                    data-bs-parent="#accordion"
+                  >
+                    <div className="accordion-body">
+                      <p>
+                        Yes, we handle complete doorstep delivery,
+                        handling, and expert on-site assembly to guarantee
+                        a hassle-free setup.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                {/* FAQ 5 */}
+                <div
+                  className="accordion-item wow fadeInUp"
+                  data-wow-delay="0.8s"
+                >
+
+                  <h2
+                    className="accordion-header"
+                    id="heading5"
+                  >
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse5"
+                      aria-expanded="false"
+                      aria-controls="collapse5"
+                    >
+                      5. How do I maintain my furniture?
+                    </button>
+                  </h2>
+
+                  <div
+                    id="collapse5"
+                    className="accordion-collapse collapse"
+                    role="region"
+                    aria-labelledby="heading5"
+                    data-bs-parent="#accordion"
+                  >
+                    <div className="accordion-body">
+                      <p>
+                        Each piece comes with care guidelines. Generally,
+                        regular dusting with soft microfiber cloths and
+                        avoiding harsh chemicals will preserve its finish
+                        for years.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {/* =========================================================
+          FAQ SECTION END
+      ========================================================= */}
+
+    </div>
+  );
+}
