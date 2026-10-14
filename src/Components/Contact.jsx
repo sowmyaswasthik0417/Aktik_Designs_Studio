@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwaRoa6phhz7l000cXG99Qa13V_Gf3JaMsU4WrxN851_XsdBrsJiMzx12zx1ylCeAps/exec"
 
@@ -68,7 +69,7 @@ const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${e
                 <h1 className="text-anime-style-3" data-cursor="-opaque">Contact Us</h1>
                 <nav className="wow fadeInUp">
                   <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="index.html">home</a></li>
+                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
                     <li className="breadcrumb-item active" aria-current="page">Contact us</li>
                   </ol>
                 </nav>

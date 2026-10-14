@@ -1,0 +1,346 @@
+
+/* =========================================
+   AKTIK DESIGNS - RESPONSIVE FOOTER
+========================================= */
+
+.aktik-footer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.aktik-footer *,
+.aktik-footer *::before,
+.aktik-footer *::after {
+  box-sizing: border-box;
+}
+
+.aktik-footer .container {
+  width: 100%;
+}
+
+/* Footer Header */
+
+.aktik-footer .footer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 25px 0;
+}
+
+.aktik-footer .footer-social-links {
+  min-width: 0;
+}
+
+.aktik-footer .footer-social-links ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.aktik-footer .footer-social-links ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.aktik-footer .footer-social-links ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.aktik-footer .footer-social-links ul li a:hover {
+  transform: translateY(-3px);
+}
+
+.aktik-footer .footer-logo {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.aktik-footer .footer-logo img {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.aktik-footer .footer-contact-item-list {
+  min-width: 0;
+}
+
+.aktik-footer .footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aktik-footer .footer-contact-item-content h2 {
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.aktik-footer .footer-contact-item-content a {
+  overflow-wrap: anywhere;
+}
+
+/* Description */
+
+.aktik-footer .footer-newsletter-box {
+  max-width: 100%;
+}
+
+.aktik-footer .footer-newsletter-content p {
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* Footer Links */
+
+.aktik-footer .footer-links-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.aktik-footer .footer-links {
+  min-width: 0;
+}
+
+.aktik-footer .footer-links h2 {
+  margin-bottom: 18px;
+}
+
+.aktik-footer .footer-links ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.aktik-footer .footer-links ul li {
+  line-height: 1.8;
+  margin-bottom: 10px;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.aktik-footer .footer-links ul li a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.aktik-footer .footer-contact-list ul li {
+  max-width: 100%;
+}
+
+/* Copyright */
+
+.aktik-footer .footer-copyright {
+  margin-top: 25px;
+}
+
+.aktik-footer .footer-copyright-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px 0;
+}
+
+.aktik-footer .footer-copyright-text p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 991px) {
+  .aktik-footer .footer-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  .aktik-footer .footer-social-links {
+    order: 1;
+    width: 100%;
+  }
+
+  .aktik-footer .footer-logo {
+    order: 2;
+    width: 100%;
+  }
+
+  .aktik-footer .footer-contact-item-list {
+    order: 3;
+    width: 100%;
+  }
+
+  .aktik-footer .footer-contact-item {
+    justify-content: center;
+  }
+
+  .aktik-footer .footer-links-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 24px;
+  }
+
+  .aktik-footer .footer-newsletter-box {
+    margin-bottom: 25px;
+  }
+}
+
+/* =========================================
+   MOBILE PHONES
+========================================= */
+
+@media (max-width: 575px) {
+  .aktik-footer .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .aktik-footer .footer-header {
+    gap: 20px;
+    padding: 25px 0;
+  }
+
+  /* Social icons */
+
+  .aktik-footer .footer-social-links ul {
+    gap: 10px;
+  }
+
+  .aktik-footer .footer-social-links ul li a {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+  }
+
+  /* Logo */
+
+  .aktik-footer .footer-logo img {
+    max-width: 155px;
+  }
+
+  /* Contact numbers */
+
+  .aktik-footer .footer-contact-item {
+    gap: 10px;
+  }
+
+  .aktik-footer .footer-contact-item .icon-box img {
+    max-width: 30px;
+    height: auto;
+  }
+
+  .aktik-footer .footer-contact-item-content h2 {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* Description */
+
+  .aktik-footer .footer-newsletter-box {
+    margin-bottom: 30px;
+  }
+
+  .aktik-footer .footer-newsletter-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* Stack all footer columns */
+
+  .aktik-footer .footer-links-box {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  .aktik-footer .footer-links {
+    width: 100%;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .aktik-footer .footer-links:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .aktik-footer .footer-links h2 {
+    font-size: 19px;
+    margin-bottom: 14px;
+  }
+
+  .aktik-footer .footer-links ul li {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .aktik-footer .footer-contact-list ul li {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  /* Copyright */
+
+  .aktik-footer .footer-copyright {
+    margin-top: 15px;
+  }
+
+  .aktik-footer .footer-copyright-box {
+    padding: 18px 0;
+  }
+
+  .aktik-footer .footer-copyright-text p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 360px) {
+  .aktik-footer .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .aktik-footer .footer-social-links ul {
+    gap: 8px;
+  }
+
+  .aktik-footer .footer-social-links ul li a {
+    width: 35px;
+    height: 35px;
+  }
+
+  .aktik-footer .footer-logo img {
+    max-width: 140px;
+  }
+
+  .aktik-footer .footer-contact-item-content h2 {
+    font-size: 14px;
+  }
+}
