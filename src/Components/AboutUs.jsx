@@ -1,9 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 export default function AboutUs() {
   return (
    <div>
+  {/* Preloader Start */}
+  {/* <div className="preloader">
+    <div className="loading-container">
+      <div className="loading" />
+      <div id="loading-icon"><img src="../assets/images/logoo.svg" alt /></div>
+    </div>
+  </div> */}
+
   {/* Page Header Start */}
   <div className="page-header dark-section parallaxie">
     <div className="container">
@@ -14,7 +21,7 @@ export default function AboutUs() {
             <h1 className="text-anime-style-3" data-cursor="-opaque">About Us</h1>
             <nav className="wow fadeInUp">
               <ol className="breadcrumb">
-                <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                <li className="breadcrumb-item"><a href="index.html">Home</a></li>
                 <li className="breadcrumb-item active" aria-current="page">About us</li>
               </ol>
             </nav>
@@ -95,7 +102,7 @@ export default function AboutUs() {
             <div className="vision-mission-item wow fadeInUp">
               <div className="vision-mission-item-image">
                 <figure>
-                  <img src="/assets/images/vision-mission-item-image-1.jpg" alt="Our Vision" />
+                  <img src="../assets/images/vision-mission-item-image-1.jpg" alt />
                 </figure>
               </div>
               <div className="vision-mission-item-content">
@@ -110,7 +117,7 @@ export default function AboutUs() {
             <div className="vision-mission-item wow fadeInUp" data-wow-delay="0.2s">
               <div className="vision-mission-item-image">
                 <figure>
-                  <img src="/assets/images/vision-mission-item-image-2.jpg" alt="Our Mission" />
+                  <img src="../assets/images/vision-mission-item-image-2.jpg" alt />
                 </figure>
               </div>
               <div className="vision-mission-item-content">

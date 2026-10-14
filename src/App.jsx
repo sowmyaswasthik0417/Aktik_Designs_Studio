@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+
+import React from "react";
 import {
   BrowserRouter,
   Routes,
@@ -6,7 +7,10 @@ import {
   useLocation,
 } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Products from "./Components/Services";
+import Projects from "./Components/Services";
 import AboutUs from "./Components/AboutUs";
+
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
@@ -18,31 +22,17 @@ import Services from "./Components/Services";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 
-/**
- * ScrollToTop — scrolls the window to the top on every route change.
- */
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [pathname]);
-
-  return null;
-}
-
 function Layout() {
   const location = useLocation();
 
-  // Header and Footer should NOT be shown on Login and Register pages
-  const hideChrome =
+  // Header should NOT be shown on Login and Register pages
+  const hideHeader =
     location.pathname === "/Login" ||
     location.pathname === "/Register";
 
   return (
     <div>
-      <ScrollToTop />
-      {!hideChrome && <Header />}
+      {!hideHeader && <Header />}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -54,15 +44,11 @@ function Layout() {
         <Route path="/Testimonials" element={<Testimonials />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Services" element={<Services />} />
-        {/* Lowercase aliases to match links used in the nav and footer */}
-        <Route path="/services" element={<Services />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/Products" element={<Products />} />
+        <Route path="/Projects" element={<Projects />} /> 
       </Routes>
 
-      {!hideChrome && <Footer />}
+      {!hideHeader && <Footer />}
     </div>
   );
 }
@@ -74,3 +60,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
