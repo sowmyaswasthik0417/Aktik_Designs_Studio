@@ -131,6 +131,7 @@
 //     </div>
 //   );
 // }
+// 
 import React, { useEffect } from "react";
 
 const GOOGLE_MAPS_URL =
@@ -140,38 +141,50 @@ const WRITE_REVIEW_URL =
   "https://search.google.com/local/writereview?placeid=ChIJmRx1KFRbozsRFN-KB9sBM0w";
 
 export default function Testimonials() {
-  {/* Hide Elfsight "Free Google Reviews Widget" badge */}
-<style>{`
-  .eapps-widget-toolbar,
-  .eapps-widget-toolbar-button,
-  a[href*="elfsight.com"],
-  [class*="eapps-google-reviews-toolbar"] {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    height: 0 !important;
-    pointer-events: none !important;
-  }
-`}</style>
-  /*
-   * Load Elfsight Google Reviews script once.
-   */
+  /* Re-load the Elfsight script every time this page mounts */
   useEffect(() => {
-    const scriptId = "elfsight-platform-script";
+    const old = document.getElementById("elfsight-platform-script");
+    if (old) old.remove();
 
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement("script");
-
-      script.id = scriptId;
-      script.src = "https://elfsightcdn.com/platform.js";
-      script.async = true;
-
-      document.body.appendChild(script);
-    } 
+    const script = document.createElement("script");
+    script.id = "elfsight-platform-script";
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
   }, []);
 
   return (
     <div>
+      <style>{`
+        /* The box automatically fits the widget's height, then crops
+           a fixed amount (--crop) off the bottom, where the Elfsight
+           badge sits. Works the same on mobile, tablet and desktop.
+
+           --crop bigger  -> more is cut off the bottom
+           --crop smaller -> less is cut off the bottom           */
+        .reviews-scroll-box {
+          --crop: 40px;
+          min-height: 200px;
+          padding-top: 10px;
+          overflow: hidden;            /* fallback for older browsers */
+          overflow: clip;              /* blocks all scrolling */
+          border: 1px solid #e5e5e5;
+          border-radius: 16px;
+          background: #fff;
+        }
+
+        .reviews-scroll-inner {
+          margin-bottom: calc(var(--crop) * -1);
+        }
+
+        /* Mobile: change only if the badge peeks in or cards get cut */
+        @media (max-width: 767px) {
+          .reviews-scroll-box {
+            --crop: 40px;
+          }
+        }
+      `}</style>
+
       {/* =========================================================
           PAGE HEADER START
       ========================================================= */}
@@ -190,10 +203,7 @@ export default function Testimonials() {
                       <a href="/">Home</a>
                     </li>
 
-                    <li
-                      className="breadcrumb-item active"
-                      aria-current="page"
-                    >
+                    <li className="breadcrumb-item active" aria-current="page">
                       Testimonials
                     </li>
                   </ol>
@@ -203,30 +213,22 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
-      {/* =========================================================
-          PAGE HEADER END
-      ========================================================= */}
-
+      {/* PAGE HEADER END */}
 
       {/* =========================================================
           GOOGLE TESTIMONIALS SECTION START
       ========================================================= */}
       <div className="page-testimonials">
         <div className="container">
-
           {/* Section Heading */}
           <div className="row section-row">
             <div className="col-lg-12">
               <div className="section-title section-title-center">
-
                 <span className="section-sub-title wow fadeInUp">
                   Google Reviews
                 </span>
 
-                <h2
-                  className="text-anime-style-3"
-                  data-cursor="-opaque"
-                >
+                <h2 className="text-anime-style-3" data-cursor="-opaque">
                   What Our Customers Say On Google
                 </h2>
 
@@ -241,7 +243,6 @@ export default function Testimonials() {
                     flexWrap: "wrap",
                   }}
                 >
-                  {/* Rating */}
                   <span
                     style={{
                       fontSize: "24px",
@@ -252,7 +253,6 @@ export default function Testimonials() {
                     5.0
                   </span>
 
-                  {/* Stars */}
                   <span
                     style={{
                       color: "#fbbc04",
@@ -290,8 +290,7 @@ export default function Testimonials() {
                       fontSize: "13px",
                       fontWeight: "600",
                       textDecoration: "none",
-                      boxShadow:
-                        "0 2px 6px rgba(66,133,244,0.3)",
+                      boxShadow: "0 2px 6px rgba(66,133,244,0.3)",
                       transition: "all 0.3s ease",
                     }}
                   >
@@ -317,8 +316,7 @@ export default function Testimonials() {
                       fontSize: "13px",
                       fontWeight: "600",
                       textDecoration: "none",
-                      boxShadow:
-                        "0 1px 3px rgba(0,0,0,0.08)",
+                      boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
                       transition: "all 0.3s ease",
                     }}
                   >
@@ -330,39 +328,21 @@ export default function Testimonials() {
             </div>
           </div>
 
-
           {/* =====================================================
-              ELFSIGHT GOOGLE REVIEWS WIDGET
+              ELFSIGHT GOOGLE REVIEWS WIDGET (carousel, badge cropped)
           ===================================================== */}
           <div className="row">
             <div className="col-lg-12">
-
-              <div
-                style={{
-                  width: "100%",
-                  minHeight: "400px",
-                }}
-              >
-                <div
-                  className="elfsight-app-87fd69a6-4842-4c84-aeb5-658e7e2078ed"
-                  data-elfsight-app-lazy
-                ></div>
+              <div className="reviews-scroll-box">
+                <div className="reviews-scroll-inner">
+                  <div className="elfsight-app-87fd69a6-4842-4c84-aeb5-658e7e2078ed"></div>
+                </div>
               </div>
-
             </div>
           </div>
-
-
-       
-
         </div>
       </div>
- 
-{/* <iframe src="https://widgets.sociablekit.com/google-reviews/iframe/25721673" frameborder="0" width="100%" height="1000px"></iframe> */}
-    {/* <iframe src="https://widgets.sociablekit.com/google-reviews/iframe/25715979" frameborder="0" width="100%" height="1000px"></iframe> */}
-   {/* <!-- Elfsight Google Reviews | Untitled Google Reviews --> */}
-{/* <script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-87fd69a6-4842-4c84-aeb5-658e7e2078ed" data-elfsight-app-lazy></div> */}
+      {/* GOOGLE TESTIMONIALS SECTION END */}
     </div>
   );
 }

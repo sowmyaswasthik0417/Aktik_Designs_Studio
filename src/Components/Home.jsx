@@ -321,32 +321,14 @@ const categories = [
 
     <div className="testimonial-item-author-box">
       <div className="testimonial-item-author">
-       <div className="testimonial-item-author-image">
-  <figure
-    className="image-anime"
-    style={{
-      width: "50px",
-      height: "50px",
-      borderRadius: "50%",
-      backgroundColor: "#8d24aaae",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      overflow: "hidden",
-      margin: 0,
-    }}
-  >
-    <span
-      style={{
-        color: "#ffffff",
-        fontSize: "22px",
-        fontWeight: "600",
-      }}
-    >
-      S
-    </span>
-  </figure>
-</div>
+        <div className="testimonial-item-author-image">
+          <figure className="image-anime">
+            <img
+              src="../assets/images/author-1.jpg"
+              alt="Sanya Bekal"
+            />
+          </figure>
+        </div>
 
         <div className="testimonial-item-author-content">
           <h2>Sanya Bekal</h2>
@@ -387,6 +369,11 @@ const categories = [
   </div>
 </div>
 
-     </div>
+    {/* Our Testimonials Section End */}
+    {/* Our Blog Section Start */}
+   
+  
+  </div>  
   )
+
 }

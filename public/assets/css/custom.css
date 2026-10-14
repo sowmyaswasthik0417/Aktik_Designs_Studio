@@ -113,6 +113,7 @@ body{
 p{
 	line-height: 1.6em;
 	margin-bottom: 1.33em;
+	        text-align: justify;
 }
 
 h1,
@@ -2630,6 +2631,8 @@ header.main-header .container{
 .testimonial-item-content p{
 	font-weight: 700;
 	margin: 0;
+		padding: 5px;
+    text-align: justify;
 }
 
 .testimonial-item-author-box{
@@ -2664,6 +2667,7 @@ header.main-header .container{
 
 .testimonial-item-author-content{
 	width: calc(100% - 75px);
+	padding: 15px;
 }
 
 .testimonial-item-author-content h2{
@@ -3447,6 +3451,7 @@ header.main-header .container{
 .vision-mission-item-content p{
 	color: var(--white-color);
 	margin: 10px 0 0;
+	    text-align: justify;
 }
 
 .our-approach{
@@ -7447,6 +7452,7 @@ ul.view-order-product-info-list li span{
 
 	.section-title p{
 		margin-top: 10px;
+		text-align: justify;
 	}
 
 	.hero{
@@ -8706,6 +8712,7 @@ ul.view-order-product-info-list li span{
 
 	.testimonial-item-author-content{
 		width: calc(100% - 65px);
+		padding: 15px;
 	}
 
 	.testimonial-item-quotes img{
