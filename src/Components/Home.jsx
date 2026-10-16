@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { CategoryGallery } from './CategoryGallery';
 
 export default function Home() {
 const categories = [
@@ -35,8 +36,8 @@ const categories = [
             <div className="hero-content-box">
               {/* Section Title Start */}
               <div className="section-title">
-                <span className="section-sub-title wow fadeInUp">From Vision to Reality ✨</span>
-                <h1 className="text-anime-style-3" data-cursor="-opaque">Creating Beautiful Spaces for Better Living ✨</h1>
+                <span className="section-sub-title wow fadeInUp">From Vision to Reality</span>
+                <h1 className="text-anime-style-3" data-cursor="-opaque">Creating Beautiful Spaces for Better Living</h1>
               </div>
               {/* Section Title End */}
               {/* Hero Content Button Start */}
@@ -114,7 +115,7 @@ const categories = [
     {/* Our Categories Section End */}
     {/* Our Offers Section Start */}
    
- 
+ {/* <CategoryGallery/> */}
     <div className="intro-video dark-section">
       {/* Video Start */}
       <div className="intro-video-bg-video">
@@ -133,7 +134,7 @@ const categories = [
             {/* Section Title Start */}
             <div className="section-title">
               <span className="section-sub-title wow fadeInUp">Interior Design Showcase</span>
-              <h2 className="text-anime-style-3" data-cursor="-opaque">Explore Spaces Designed for Modern Living ✨</h2>
+              <h2 className="text-anime-style-3" data-cursor="-opaque">Explore Spaces Designed for Modern Living</h2>
             </div>
             {/* Section Title End */}
           </div>
@@ -370,10 +371,9 @@ const categories = [
 </div>
 
     {/* Our Testimonials Section End */}
-    {/* Our Blog Section Start */}
-   
+
   
-  </div>  
+  </div>
   )
 
 }

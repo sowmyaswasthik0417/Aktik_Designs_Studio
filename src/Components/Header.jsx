@@ -92,7 +92,7 @@ const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${e
                   <div className="header-contact-info-content">
                     <p>Need Help ?</p>
                     <span>
-                      <a href="tel:+917259759858">+91 7259759858</a>
+                      <a href="tel:+917259759858">+91 9606987625</a>
                     </span>
                   </div>
                 </div>

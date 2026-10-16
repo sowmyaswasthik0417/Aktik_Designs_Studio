@@ -2935,7 +2935,8 @@ header.main-header .container{
 
 .footer-logo img{
 	width: 100%;
-	max-width: 160px;
+	/* max-width: 160px;
+	margin-left: 70px; */
 }
 
 .footer-contact-item-list,
@@ -8440,7 +8441,7 @@ ul.view-order-product-info-list li span{
 	}
 
 	.navbar-brand img{
-		max-width: 100px;
+		max-width: 80px;
 		/* max-width: 145px; */
 	}
 
@@ -8753,6 +8754,7 @@ ul.view-order-product-info-list li span{
 	.footer-logo{
 		width: 100%;
 		text-align: left;
+		max-width: 90px;
 	}
 
 	.footer-contact-item-list{
