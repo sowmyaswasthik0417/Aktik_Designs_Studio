@@ -1,0 +1,33 @@
+/* ===== Sticky Header ===== */
+.main-header {
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #fff; /* change to match your header color */
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.header-sticky {
+  position: relative !important; /* stops the theme from making it fixed/absolute */
+  top: auto !important;
+  transform: none !important;
+  background: inherit;
+}
+
+/* Shadow when the page is scrolled (needs the isScrolled state from my earlier message) */
+.header-sticky.active {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  background: #fff;
+}
+
+/* ===== Make sure nothing blocks sticky ===== */
+html,
+body {
+  overflow-x: clip; /* use clip, NOT hidden, since hidden breaks sticky */
+}
+
+#root {
+  overflow: visible;
+}

@@ -1,31 +1,32 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-
+import './Services.css'
 export default function Services() {
     const services = [
         {
-            image: "/assets/images/myproject (1).jpeg",
+            image: "../assets/Projects/Mangalore/mng5.jpeg",
+            // image: "/assets/images/myproject (1).jpeg",
             title: "Residential Interior Design",
             description:
                 "We design homes that feel like you — comfortable, personal, and thoughtfully put together. Every space is shaped around how you live, not just how it looks.",
             highlights: ["Living & bedrooms", "Kitchen & dining", "Personalized styling"],
         },
         {
-            image: "/assets/images/myproject (2).jpeg",
+            image: "/assets/Projects/Mangalore/liqourlounge.jpg",
             title: "Commercial Interior Design",
             description:
                 "We create interiors that support your business while leaving a lasting impression. From layout to finishes, every detail is designed to work hard and look right.",
             highlights: ["Offices & retail", "Brand-led spaces", "Functional layouts"],
         },
         {
-            image: "/assets/images/myproject (3).jpeg",
+            image: "/assets/Projects/Mangalore/mng266.jpg",
             title: "Renovation and Remodeling",
             description:
                 "We transform existing spaces with smart design decisions and careful planning. Whether it's a refresh or a full overhaul, we'll help you reimagine.",
             highlights: ["Structural planning", "Material upgrades", "Minimal downtime"],
         },
         {
-            image: "/assets/images/myproject (4).jpeg",
+            image: "/assets/Projects/Bangalore/bng8.png",
             title: "Custom Design Solutions",
             description:
                 "No templates, no shortcuts — every design is built around you. We listen closely and create solutions that fit your vision, space, and lifestyle.",
@@ -39,7 +40,7 @@ export default function Services() {
             highlights: ["Furniture selection", "Color & texture", "Styling advice"],
         },
         {
-            image: "/assets/images/myproject (6).jpeg",
+            image: "/assets/Projects/Bangalore/3D_image.webp",
             title: "Space Planning & 3D Visualization",
             description:
                 "We map out layouts and bring them to life with realistic 3D visuals, so you can see, feel confident, and move forward with clarity.",
@@ -204,7 +205,34 @@ export default function Services() {
 
         return () => cancelAnimationFrame(frame);
     }, [isMobile]);
+const closingRef = useRef(null);
+const [closingVisible, setClosingVisible] = useState(false);
 
+useEffect(() => {
+    const el = closingRef.current;
+    if (!el) return;
+
+    // Already on screen (e.g. after a refresh mid-page)? Show it.
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+        setClosingVisible(true);
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                setClosingVisible(true);
+                observer.disconnect();
+            }
+        },
+        { threshold: 0, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    observer.observe(el);
+
+    return () => observer.disconnect();
+}, []);
     return (
         <div className="services-page">
 
@@ -251,7 +279,83 @@ export default function Services() {
                 </div>
             </div>
 
+<section
+    ref={closingRef}
+    className={`aktik-closing ${closingVisible ? "is-visible" : ""}`}
+>
+    <div className="container">
+        <div className="aktik-closing-grid">
 
+            {/* Image side */}
+            <div className="aktik-closing-media aktik-reveal" style={{ "--d": "0s" }}>
+                <div className="aktik-closing-frame">
+                    <img
+                        src="/assets/images/myproject (4).jpeg"
+                        alt="Interior designed by Aktik Design Studio"
+                    />
+                </div>
+
+                <div className="aktik-closing-badge">
+                    <span>Timeless</span>
+                    <span>Functional</span>
+                    <span>Lasting</span>
+                </div>
+            </div>
+
+            {/* Content side */}
+            <div className="aktik-closing-body">
+
+                <div className="aktik-closing-label aktik-reveal" style={{ "--d": "0.1s" }}>
+                    <i />
+                    <span>OUR SERVICES</span>
+                </div>
+
+                <h2 className="aktik-closing-heading aktik-reveal" style={{ "--d": "0.2s" }}>
+                    Interiors that stand the <em>test of time</em> while serving
+                    your daily needs.
+                </h2>
+
+                <p className="aktik-closing-text aktik-reveal" style={{ "--d": "0.3s" }}>
+                    Good design isn't about chasing trends. It's about creating
+                    spaces that stay beautiful, work hard, and feel right for
+                    years to come.
+                </p>
+
+                <ul className="aktik-closing-list">
+                    {[
+                        ["Timeless Design", "Classic proportions and lasting materials that never feel dated."],
+                        ["Made for Daily Life", "Smart storage and comfortable layouts built around your routine."],
+                        ["Crafted to Last", "Quality finishes and careful detailing, from first sketch to handover."],
+                    ].map(([title, text], i) => (
+                        <li
+                            key={title}
+                            className="aktik-closing-item aktik-reveal"
+                            style={{ "--d": `${0.4 + i * 0.1}s` }}
+                        >
+                            <span className="aktik-closing-num">0{i + 1}</span>
+                            <div>
+                                <h3>{title}</h3>
+                                <p>{text}</p>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+
+                <div className="aktik-reveal" style={{ "--d": "0.7s" }}>
+                    <Link to="/Contact" className="aktik-closing-cta">
+                        <span>Start Your Project</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" strokeWidth="1.8"
+                            strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </Link>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
             {/* =====================================================
                 SERVICES SCROLL SECTION
             ====================================================== */}
@@ -270,7 +374,7 @@ export default function Services() {
                     <div className="aktik-services-content">
 
                         <div className="aktik-services-label">
-                            OUR EXPERTISE
+                            OUR SERVICES
                         </div>
 
                         <div className="aktik-services-title-area">
@@ -405,7 +509,7 @@ export default function Services() {
                 <div className="container">
 
                     <div className="aktik-mobile-services-heading">
-                        <span>OUR EXPERTISE</span>
+                        <span>OUR SERVICES</span>
 
                         <h2>
                             Spaces designed around
@@ -588,6 +692,10 @@ export default function Services() {
                 </div>
 
             </section>
+{/* =====================================================
+    CLOSING STATEMENT SECTION
+====================================================== */}
+
 
 
             {/* =====================================================
@@ -620,7 +728,12 @@ export default function Services() {
 
                     background: #ffffff;
                 }
-
+@media (min-width: 992px) {
+    .aktik-services-sticky {
+        box-sizing: border-box;
+        padding-top: 110px;   /* ≈ header height, adjust to taste */
+    }
+}
 
                 /* ================================================
                    LEFT CONTENT
@@ -1333,7 +1446,259 @@ export default function Services() {
                     }
 
                 }
+/* ================================================
+   CLOSING STATEMENT SECTION
+================================================= */
 
+/* ================================================
+   CLOSING STATEMENT SECTION
+================================================= */
+
+.aktik-closing {
+    background: #ffffff;
+    color: #1c1c1c;
+    padding: 120px 0 140px;
+    // margin-bottom: 60px;
+}
+
+.aktik-closing-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(40px, 7vw, 110px);
+    align-items: center;
+}
+
+/* ---------- Image side ---------- */
+.aktik-closing-media {
+    position: relative;
+}
+
+.aktik-closing-frame {
+    position: relative;
+    aspect-ratio: 4 / 5;
+}
+
+.aktik-closing-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translate(18px, 18px);
+    border: 1px solid #c8a46a;
+    z-index: 0;
+}
+
+.aktik-closing-frame img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.aktik-closing-badge {
+    position: absolute;
+    z-index: 2;
+    left: -24px;
+    bottom: 36px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 18px 26px;
+    background: #1c1c1c;
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.aktik-closing-badge span + span::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 1px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background: #c8a46a;
+}
+
+/* ---------- Content side ---------- */
+.aktik-closing-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.aktik-closing-label i {
+    width: 44px;
+    height: 1px;
+    background: #c8a46a;
+}
+
+.aktik-closing-label span {
+    opacity: 0.75;
+}
+
+.aktik-closing-heading {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 3.6vw, 50px);
+    line-height: 1.2;
+    font-weight: 400;
+    margin: 0 0 24px;
+    text-wrap: balance;
+}
+
+.aktik-closing-heading em {
+    font-style: italic;
+    color: #c8a46a;
+}
+
+.aktik-closing-text {
+    max-width: 520px;
+    margin: 0 0 40px;
+
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 300;
+    color: rgba(28, 28, 28, 0.7);
+}
+
+/* ---------- Numbered list ---------- */
+.aktik-closing-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 44px;
+}
+
+.aktik-closing-item {
+    display: flex;
+    gap: 26px;
+    padding: 22px 0;
+    border-top: 1px solid rgba(28, 28, 28, 0.12);
+}
+
+.aktik-closing-item:last-child {
+    border-bottom: 1px solid rgba(28, 28, 28, 0.12);
+}
+
+.aktik-closing-num {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    line-height: 1.2;
+    color: #c8a46a;
+    min-width: 34px;
+}
+
+.aktik-closing-item h3 {
+    font-size: 18px;
+    margin: 0 0 6px;
+}
+
+.aktik-closing-item p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(28, 28, 28, 0.65);
+}
+
+/* ---------- CTA ---------- */
+.aktik-closing-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 15px 18px 15px 32px;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #ffffff;
+    background: #1c1c1c;
+    border-radius: 40px;
+
+    transition: background 0.3s ease, gap 0.3s ease;
+}
+
+.aktik-closing-cta svg {
+    padding: 8px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #c8a46a;
+    color: #1c1c1c;
+    box-sizing: border-box;
+}
+
+.aktik-closing-cta:hover {
+    background: #c8a46a;
+    color: #1c1c1c;
+    gap: 20px;
+}
+
+.aktik-closing-cta:hover svg {
+    background: #1c1c1c;
+    color: #ffffff;
+}
+
+/* ---------- Reveal (delay comes from --d) ---------- */
+.aktik-closing .aktik-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.8s ease var(--d, 0s),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s);
+}
+
+.aktik-closing.is-visible .aktik-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+    // .aktik-closing {
+    //     padding: 70px 0 100px;
+    //     margin-bottom: 40px;
+    // }
+
+    .aktik-closing-grid {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+
+    .aktik-closing-frame {
+        aspect-ratio: 4 / 3;
+    }
+
+    .aktik-closing-frame::before {
+        transform: translate(10px, 10px);
+    }
+
+    .aktik-closing-badge {
+        left: 12px;
+        bottom: -22px;
+        padding: 14px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aktik-closing .aktik-reveal {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+}
             `}</style>
 
         </div>

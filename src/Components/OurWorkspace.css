@@ -1,0 +1,91 @@
+/* ---------- Our Workspace v2 ---------- */
+.our-workspace { --ws-gold: #c9a96e; --ws-dark: #111; --ws-cream: #f5f2ea; }
+
+.ws-count { margin-top: 10px; color: #666; font-size: 15px; }
+.ws-count strong { color: var(--ws-gold); font-size: 20px; }
+
+.workspace-item {
+  display: flex; flex-direction: column; align-items: center;
+  text-decoration: none; color: inherit; padding: 14px 0;
+}
+
+/* Rotating gold ring like an Instagram story */
+.workspace-ring {
+  position: relative; width: 150px; height: 150px; border-radius: 50%; padding: 5px;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.workspace-ring::before {
+  content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(var(--ws-gold), #f1e3c6, var(--ws-gold), #8a6d3b, var(--ws-gold));
+  animation: ws-spin 6s linear infinite;
+}
+.workspace-circle {
+  position: relative; z-index: 1; width: 100%; height: 100%; border-radius: 50%;
+  background: var(--ws-cream); border: 3px solid #fff; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  transition: background .4s ease, box-shadow .4s ease;
+}
+.workspace-img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+
+.workspace-icon {
+  color: var(--ws-gold); margin-bottom: 2px;
+  animation: ws-bounce 2.4s ease-in-out infinite;
+}
+.workspace-script {
+  font-family: "Great Vibes", cursive; font-size: 28px; color: var(--ws-dark); line-height: 1;
+  transition: color .4s ease;
+}
+.workspace-small {
+  font-size: 8px; letter-spacing: 3px; margin-top: 5px; color: #555; transition: color .4s ease;
+}
+
+.workspace-item h3 {
+  margin-top: 14px; font-size: 18px; font-weight: 600; position: relative;
+  transition: color .3s ease;
+}
+.workspace-item h3::after {
+  content: ""; position: absolute; left: 50%; bottom: -4px; width: 0; height: 2px;
+  background: var(--ws-gold); transform: translateX(-50%); transition: width .35s ease;
+}
+.workspace-tag {
+  font-size: 12px; color: #888; margin-top: 6px; opacity: 0; transform: translateY(6px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+/* Hover */
+.workspace-item:hover .workspace-ring { transform: translateY(-8px) scale(1.06); }
+.workspace-item:hover .workspace-circle {
+  background: var(--ws-dark); box-shadow: 0 15px 35px rgba(201,169,110,.35);
+}
+.workspace-item:hover .workspace-script { color: var(--ws-gold); }
+.workspace-item:hover .workspace-small { color: #ddd; }
+.workspace-item:hover .workspace-img { transform: scale(1.12); }
+.workspace-item:hover h3 { color: var(--ws-gold); }
+.workspace-item:hover h3::after { width: 60%; }
+.workspace-item:hover .workspace-tag { opacity: 1; transform: translateY(0); }
+
+/* Entrance animations */
+.ws-pop { opacity: 0; animation: ws-pop .7s cubic-bezier(.2,.8,.2,1) forwards; }
+.ws-fade-up { opacity: 0; animation: ws-fade-up .8s ease forwards; }
+.ws-delay-1 { animation-delay: .15s; }
+.ws-delay-2 { animation-delay: .3s; }
+
+/* Pagination */
+.workspace-pagination { text-align: center; margin-top: 30px; }
+.workspace-pagination .swiper-pagination-bullet {
+  width: 8px; height: 8px; background: var(--ws-gold); opacity: .35; transition: all .35s ease;
+}
+.workspace-pagination .swiper-pagination-bullet-active { width: 26px; border-radius: 6px; opacity: 1; }
+
+@keyframes ws-spin { to { transform: rotate(360deg); } }
+@keyframes ws-bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes ws-pop { from { opacity: 0; transform: scale(.7) translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes ws-fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 576px) {
+  .workspace-ring { width: 120px; height: 120px; }
+  .workspace-script { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .workspace-ring::before, .workspace-icon, .ws-pop, .ws-fade-up { animation: none; opacity: 1; }
+}

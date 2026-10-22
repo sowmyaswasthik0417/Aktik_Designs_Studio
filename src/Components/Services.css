@@ -1,0 +1,336 @@
+/* =========================================
+   AKTIK SERVICES — POLISHED FINISH
+   Append at the end of the existing style block
+========================================= */
+
+.aktik-services-scroll {
+    background: #fbfaf8;
+    color: #1c1c1c;
+}
+
+.aktik-services-sticky {
+    background: #fbfaf8;
+    isolation: isolate;
+}
+
+.aktik-services-content {
+    box-sizing: border-box;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.aktik-services-label {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 28px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #8d7046;
+}
+
+.aktik-services-label::before {
+    content: "";
+    width: 35px;
+    height: 1px;
+    background: #c8a46a;
+    flex-shrink: 0;
+}
+
+.aktik-services-title-area {
+    gap: 24px;
+}
+
+.aktik-services-indicator {
+    background: rgba(200, 164, 106, 0.28);
+}
+
+.aktik-services-indicator span {
+    background: #c8a46a;
+    border-radius: 2px;
+}
+
+.aktik-services-titles {
+    gap: 15px;
+}
+
+.aktik-service-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(23px, 2.2vw, 39px);
+    line-height: 1.18;
+    letter-spacing: -0.6px;
+    color: rgba(28, 28, 28, 0.32);
+}
+
+.aktik-service-title.active {
+    color: #1c1c1c;
+    transform: translateX(6px);
+}
+
+.aktik-services-description {
+    margin-top: 32px;
+    min-height: 125px;
+}
+
+.aktik-services-description p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #68645f;
+}
+
+.aktik-services-highlights {
+    gap: 9px;
+    margin-top: 22px;
+}
+
+.aktik-highlight-tag {
+    padding: 8px 13px;
+    border: 1px solid rgba(141, 112, 70, 0.28);
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.65);
+    color: #62523b;
+    font-size: 11px;
+    letter-spacing: 0.2px;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.aktik-highlight-tag:hover {
+    background: #f1e8da;
+    border-color: #c8a46a;
+}
+
+/* Image treatment: retain the photos but soften the overlay */
+.aktik-services-images {
+    background: #e8e1d7;
+}
+
+.aktik-large-image {
+    background: #e8e1d7;
+}
+
+.aktik-large-image img,
+.aktik-small-image img {
+    transition: transform 1s ease, opacity 0.4s ease;
+}
+
+.aktik-large-image:hover img {
+    transform: scale(1.025);
+}
+
+.aktik-image-overlay {
+    background: linear-gradient(
+        90deg,
+        rgba(28, 28, 28, 0.28),
+        rgba(28, 28, 28, 0.02) 65%
+    );
+    pointer-events: none;
+}
+
+.aktik-small-image {
+    border: 6px solid #fbfaf8;
+    box-shadow: 0 24px 65px rgba(37, 29, 19, 0.2);
+}
+
+/* Closing section: consistent spacing and image presentation */
+.aktik-closing {
+    /* padding-top: 100px;
+    padding-bottom: 105px;
+    margin-bottom: 0;
+    background: #fbfaf8; */
+}
+
+.aktik-closing-grid {
+    gap: clamp(35px, 6vw, 90px);
+}
+
+.aktik-closing-frame {
+    background: #e8e1d7;
+}
+
+.aktik-closing-frame::before {
+    border-color: rgba(200, 164, 106, 0.85);
+}
+
+.aktik-closing-heading {
+    letter-spacing: -0.6px;
+}
+
+.aktik-closing-item {
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.aktik-closing-item h3 {
+    font-weight: 500;
+}
+
+.aktik-closing-cta {
+    text-decoration: none;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.aktik-closing-cta:hover {
+    transform: translateY(-2px);
+}
+
+/* Mobile service cards */
+.aktik-mobile-services {
+    background: #f7f5f2;
+}
+
+.aktik-mobile-services-heading {
+    margin-bottom: 28px;
+}
+
+.aktik-mobile-services-heading > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #8d7046;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+
+.aktik-mobile-services-heading > span::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: #c8a46a;
+}
+
+.aktik-mobile-services-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(29px, 6vw, 38px);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.aktik-mobile-service-card {
+    border-radius: 8px;
+    box-shadow: 0 12px 35px rgba(38, 30, 20, 0.09);
+}
+
+.aktik-mobile-service-image img {
+    transition: transform 0.6s ease;
+}
+
+.aktik-mobile-service-card.is-active .aktik-mobile-service-image img {
+    transform: scale(1.025);
+}
+
+.aktik-mobile-service-content h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.aktik-mobile-service-tags span {
+    border-color: rgba(141, 112, 70, 0.25);
+    color: #62523b;
+}
+
+.aktik-mobile-service-content > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 3px;
+    color: #80633d;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.aktik-mobile-service-content > a::after {
+    content: "→";
+    transition: transform 0.2s ease;
+}
+
+.aktik-mobile-service-content > a:hover::after {
+    transform: translateX(4px);
+}
+
+.aktik-mobile-service-dots button {
+    cursor: pointer;
+}
+
+.aktik-mobile-service-dots button.active {
+    width: 22px;
+    border-radius: 8px;
+    transform: none;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .aktik-closing {
+        /* padding: 65px 0 75px; */
+    }
+
+    .aktik-closing-grid {
+        gap: 48px;
+    }
+
+    .aktik-closing-heading {
+        font-size: clamp(31px, 5vw, 43px);
+    }
+}
+
+/* Small mobile */
+@media (max-width: 575px) {
+    .aktik-mobile-services {
+        padding: 45px 0;
+    }
+
+    .aktik-mobile-service-list {
+        gap: 12px;
+    }
+
+    .aktik-mobile-service-card {
+        flex-basis: 84%;
+    }
+
+    .aktik-mobile-service-content {
+        padding: 18px;
+    }
+
+    .aktik-closing {
+        /* padding: 48px 0 60px; */
+    }
+
+    .aktik-closing-heading {
+        font-size: 32px;
+    }
+
+    .aktik-closing-text {
+        font-size: 14px;
+        margin-bottom: 28px;
+    }
+
+    .aktik-closing-item {
+        gap: 14px;
+        padding: 18px 0;
+    }
+
+    .aktik-closing-badge {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aktik-service-title,
+    .aktik-services-description p,
+    .aktik-large-image,
+    .aktik-small-image,
+    .aktik-mobile-service-card,
+    .aktik-mobile-service-image img {
+        transition: none !important;
+    }
+}

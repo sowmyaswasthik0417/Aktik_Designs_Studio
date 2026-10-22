@@ -6,6 +6,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { CategoryGallery } from './CategoryGallery';
+import OurWorkspace from './OurWorkspace';
+import Projects from './Projects';
+import ProjectMarquee from './ProjectMarquee';
+
 
 export default function Home() {
 const categories = [
@@ -53,69 +57,13 @@ const categories = [
     </div>
     {/* Hero Section End */}
     {/* Our Categories Section Start */}
-  <div className="our-categories">
-      <div className="container">
-        <div className="row section-row">
-          <div className="col-xl-12">
-            <div className="section-title section-title-center">
-              {/* <span className="section-sub-title">Our services</span> */}
-              <h2 className="text-anime-style-3" data-cursor="-opaque">
-            Our services
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="category-item-slider">
-  <Swiper
-    modules={[Navigation, Pagination, Autoplay]}
-    spaceBetween={20}
-    slidesPerView={1}
-    loop={true}
-    autoplay={{ delay: 2000, disableOnInteraction: false }}
-    pagination={{ el: '.category-pagination', clickable: true }}
-    breakpoints={{
-      320: { slidesPerView: 1 },
-      576: { slidesPerView: 2 },
-      768: { slidesPerView: 3 },
-      992: { slidesPerView: 5 },
-    }}
-  >
-    {categories.map((category, index) => (
-      <SwiperSlide key={index}>
-        <div className="category-item">
-          <div className="category-item-image-box">
-            <div className="category-item-image">
-              <figure>
-               <img src={category.img} alt={category.title} />
-              </figure>
-            </div>
-            <div className="category-item-info">
-             <Link to="/Products"> 
-             <p>{category.title}</p>
-             </Link>
-            </div>
-          </div>
-          <div className="category-item-content">
-            <h3>
-              <Link to="/Products">{category.name}</Link>
-            </h3>
-          </div>
-        </div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
-  <div className="category-pagination"></div>
-</div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+    <OurWorkspace/>
     {/* Our Categories Section End */}
     {/* Our Offers Section Start */}
    
- {/* <CategoryGallery/> */}
+ {/* <ProjectMarquee /> */}
+ 
     <div className="intro-video dark-section">
       {/* Video Start */}
       <div className="intro-video-bg-video">
@@ -173,10 +121,11 @@ const categories = [
               <div className="story-item">
                 {/* Story Item Video Start */}
                 <div className="story-item-video">
-                  <a href="../assets/images/livora-our-story-1-video.mp4" className="popup-video" data-cursor-text="View">
+                  <a href="../assets/Projects/Mangalore/video1.mp4" className="popup-video" data-cursor-text="View">
+                  {/* <a href="../assets/images/livora-our-story-1-video.mp4" className="popup-video" data-cursor-text="View"> */}
                     {/* Selfhosted Video Start */}
                     {/* <video autoplay muted loop id="storyvideo1"><source src="../assets/images/livora-our-story-1-video.mp4" type="video/mp4"></video> */}
-                    <video autoPlay muted playsInline loop id="storyvideo1"><source src="../assets/images/livora-our-story-1-video.mp4" type="video/mp4" /></video>
+                    <video autoPlay muted playsInline loop id="storyvideo1"><source src="../assets/Projects/Mangalore/video1.mp4" type="video/mp4" /></video>
                     {/* Selfhosted Video End */}
                     {/* Youtube Video Start */}
                     {/* <div id="youtubevideo" class="player" data-property="{videoURL:'OjTRVpgtcG4',containment:'.intro-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> */}
@@ -193,10 +142,10 @@ const categories = [
               <div className="story-item">
                 {/* Story Item Video Start */}
                 <div className="story-item-video">
-                  <a href="../assets/images/livora-our-story-2-video.mp4" className="popup-video" data-cursor-text="View">
+                  <a href="../assets/Projects/Mangalore/video6.mp4" className="popup-video" data-cursor-text="View">
                     {/* Selfhosted Video Start */}
                     {/* <video autoplay muted loop id="storyvideo2"><source src="../assets/images/livora-our-story-2-video.mp4" type="video/mp4"></video> */}
-                    <video autoPlay muted playsInline loop id="storyvideo2"><source src="../assets/images/livora-our-story-2-video.mp4" type="video/mp4" /></video>
+                    <video autoPlay muted playsInline loop id="storyvideo2"><source src="../assets/Projects/Mangalore/video6.mp4" type="video/mp4" /></video>
                     {/* Selfhosted Video End */}
                     {/* Youtube Video Start */}
                     {/* <div id="youtubevideo" class="player" data-property="{videoURL:'OjTRVpgtcG4',containment:'.intro-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> */}
@@ -213,10 +162,10 @@ const categories = [
               <div className="story-item">
                 {/* Story Item Video Start */}
                 <div className="story-item-video">
-                  <a href="../assets/images/livora-our-story-3-video.mp4" className="popup-video" data-cursor-text="View">
+                  <a href="../assets/Projects/Mangalore/video7.mp4" className="popup-video" data-cursor-text="View">
                     {/* Selfhosted Video Start */}
                     {/* <video autoplay muted loop id="storyvideo3"><source src="../assets/images/livora-our-story-3-video.mp4" type="video/mp4"></video> */}
-                    <video autoPlay muted playsInline loop id="storyvideo3"><source src="../assets/images/livora-our-story-3-video.mp4" type="video/mp4" /></video>
+                    <video autoPlay muted playsInline loop id="storyvideo3"><source src="../assets/Projects/Mangalore/video7.mp4" type="video/mp4" /></video>
                     {/* Selfhosted Video End */}
                     {/* Youtube Video Start */}
                     {/* <div id="youtubevideo" class="player" data-property="{videoURL:'OjTRVpgtcG4',containment:'.intro-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> */}
@@ -233,10 +182,10 @@ const categories = [
               <div className="story-item">
                 {/* Story Item Video Start */}
                 <div className="story-item-video">
-                  <a href="../assets/images/livora-our-story-4-video.mp4" className="popup-video" data-cursor-text="View">
+                  <a href="../assets/Projects/Mangalore/video10.mp4" className="popup-video" data-cursor-text="View">
                     {/* Selfhosted Video Start */}
                     {/* <video autoplay muted loop id="storyvideo4"><source src="../assets/images/livora-our-story-4-video.mp4" type="video/mp4"></video> */}
-                    <video autoPlay muted playsInline loop id="storyvideo4"><source src="../assets/images/livora-our-story-4-video.mp4" type="video/mp4" /></video>
+                    <video autoPlay muted playsInline loop id="storyvideo4"><source src="../assets/Projects/Mangalore/video10.mp4" type="video/mp4" /></video>
                     {/* Selfhosted Video End */}
                     {/* Youtube Video Start */}
                     {/* <div id="youtubevideo" class="player" data-property="{videoURL:'OjTRVpgtcG4',containment:'.intro-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> */}
@@ -267,7 +216,7 @@ const categories = [
         <div className="testimonials-image wow fadeInUp">
           <figure>
             <img
-              src="../assets/images/testimonials-image.png"
+              src="../assets/images/myproject (16).jpeg"
               alt="Aktik Designs interior design"
             />
           </figure>

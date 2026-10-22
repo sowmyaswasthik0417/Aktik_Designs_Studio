@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Products from "./Components/Services";
-import Projects from "./Components/Services";
+
 import AboutUs from "./Components/AboutUs";
 
 import Footer from "./Components/Footer";
@@ -21,6 +21,7 @@ import Contact from "./Components/Contact";
 import Services from "./Components/Services";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
+import ProjectsPage from "./Components/Projects";
 
 function Layout() {
   const location = useLocation();
@@ -45,7 +46,7 @@ function Layout() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Products" element={<Products />} />
-        <Route path="/Projects" element={<Projects />} /> 
+        <Route path="/Projects" element={<ProjectsPage />} /> 
       </Routes>
 
       {!hideHeader && <Footer />}

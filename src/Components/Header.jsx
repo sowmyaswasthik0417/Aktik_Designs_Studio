@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import './Header.css'
 /**
  * Header
  *
@@ -19,9 +19,9 @@ import { Link } from "react-router-dom";
 const NAV_ITEMS = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/AboutUs" },
-  { label: "Services", to: "/services" },
-  { label: "Blog", to: "/blog" },
-  { label: "Contact Us", to: "/contact" },
+  { label: "Services", to: "/Services" },
+  { label: "Projects", to: "/Projects" },
+  { label: "Contact Us", to: "/Contact" },
 ];
 
 function MobileNav({ isOpen, onLinkClick }) {
