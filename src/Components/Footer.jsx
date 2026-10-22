@@ -56,8 +56,7 @@ return (
   <div className="footer-newsletter-box">
     <div className="footer-newsletter-content">
       <p>
-        Crafted with passion deliver elegant furniture experiences
-        for modern homes and lifestyles.
+       Crafted with passion, we create elegant interior spaces that blend timeless design, comfort, and modern living.
       </p>
     </div>
 
@@ -128,7 +127,7 @@ return (
                 <li><a href="/">Home</a></li>
                 <li><a href="/AboutUs">About Us</a></li>
                 <li><a href="/Services">Services</a></li>
-                {/* <li><a href="/Projects">Projects</a></li> */}
+                <li><a href="/Projects">Projects</a></li>
                 {/* <li><a href="/Products">Products</a></li> */}
                 <li><a href="/Testimonials">Testimonials</a></li>
                 <li><a href="/Contact">Contact Us</a></li>
@@ -139,12 +138,12 @@ return (
             <div className="footer-links">
               <h2>Services</h2>
               <ul>
-                <li><a href="/Services">Residential Interiors</a></li>
-                <li><a href="/Services">Modular Kitchens</a></li>
-                <li><a href="/Services">Bedrooms</a></li>
-                <li><a href="/Services">Living Rooms</a></li>
-                <li><a href="/Services">Wardrobes</a></li>
-                <li><a href="/Services">Custom Furniture</a></li>
+                <li><a href="/Services">Residential</a></li>
+                <li><a href="/Services">Commercial</a></li>
+                <li><a href="/Services">Renovation and Remodeling</a></li>
+                <li><a href="/Services">Custom Design</a></li>
+                <li><a href="/Services">Furniture & Decor Consultation</a></li>
+                <li><a href="/Services">Space Planning & 3D Visualization</a></li>
               </ul>
             </div>
             {/* Footer Links End */}
@@ -174,9 +173,9 @@ return (
             {/* Footer Copyright Start */}
             <div className="footer-copyright-box">
               {/* Footer Copyright Text Start */}
-              <div className="footer-copyright-text">
+              {/* <div className="footer-copyright-text">
                 <p>Copyright © 2026 All Rights Reserved.</p>
-              </div>
+              </div> */}
               {/* Footer Copyright Text End */}
               {/* Footer Payment Options Start */}
               {/* <div className="footer-payment-options">
