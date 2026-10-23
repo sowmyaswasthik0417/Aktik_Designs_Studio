@@ -22,7 +22,7 @@ import Services from "./Components/Services";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import ProjectsPage from "./Components/Projects";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./Components/ScrollToTop";
 function Layout() {
   const location = useLocation();
 
