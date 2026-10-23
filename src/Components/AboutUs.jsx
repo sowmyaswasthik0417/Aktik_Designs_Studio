@@ -11,9 +11,7 @@ export default function AboutUs() {
           <div className="row">
             <div className="col-lg-12">
               <div className="page-header-box">
-                <span className="aktik-about-eyebrow">
-                  AKTIK DESIGNS STUDIO
-                </span>
+
 
                 <h1 className="text-anime-style-3">
                   About Us
@@ -118,11 +116,9 @@ export default function AboutUs() {
                     alt="Our Vision"
                   />
 
-                  <span className="aktik-vm-number">01</span>
+                  {/* <span className="aktik-vm-number">01</span> */}
 
-                  <span className="aktik-vm-badge">
-                    FUTURE &amp; FOCUS
-                  </span>
+                 
                 </div>
 
                 <div className="aktik-vm-content">
@@ -153,11 +149,7 @@ export default function AboutUs() {
                     alt="Our Mission"
                   />
 
-                  <span className="aktik-vm-number">02</span>
-
-                  <span className="aktik-vm-badge">
-                    PURPOSE &amp; EXECUTION
-                  </span>
+                 
                 </div>
 
                 <div className="aktik-vm-content">
