@@ -3,7 +3,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/((?!google4f14b9261dfc10b7\\.html$).*)",
+      "source": "/((?!google4f14b9261dfc10b7\\.html$|sitemap\\.xml$).*)",
       "destination": "/index.html"
     }
   ]
