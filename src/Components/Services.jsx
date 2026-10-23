@@ -290,7 +290,7 @@ useEffect(() => {
             <div className="aktik-closing-media aktik-reveal" style={{ "--d": "0s" }}>
                 <div className="aktik-closing-frame">
                     <img
-                        src="/assets/images/myproject (4).jpeg"
+                        src="/assets/Projects/Mangalore/mng4.jpeg"
                         alt="Interior designed by Aktik Design Studio"
                     />
                 </div>
@@ -744,7 +744,7 @@ useEffect(() => {
                     z-index: 20;
 
                     width: 48%;
-                    max-width: 650px;
+                    // max-width: 650px;
 
                     padding-left: clamp(
                         35px,
@@ -894,7 +894,7 @@ useEffect(() => {
 
                     margin: 0;
 
-                    max-width: 510px;
+                    max-width: 500px;
 
                     font-size: 16px;
 
@@ -965,7 +965,7 @@ useEffect(() => {
                     right: 0;
                     top: 0;
 
-                    width: 62%;
+                    width: 55%;
                     height: 100%;
 
                     overflow: hidden;
@@ -1044,9 +1044,9 @@ useEffect(() => {
 
                     z-index: 10;
 
-                    box-shadow:
-                        0 30px 70px
-                        rgba(0, 0, 0, 0.35);
+                    // box-shadow:
+                    //     0 30px 70px
+                    //     rgba(0, 0, 0, 0.35);
 
                     transition:
                         transform 1s

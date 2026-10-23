@@ -22,7 +22,7 @@ import Services from "./Components/Services";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import ProjectsPage from "./Components/Projects";
-
+import ScrollToTop from "./components/ScrollToTop";
 function Layout() {
   const location = useLocation();
 
@@ -57,6 +57,7 @@ function Layout() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Layout />
     </BrowserRouter>
   );

@@ -82,14 +82,15 @@ const categories = [
             {/* Section Title Start */}
             <div className="section-title">
               <span className="section-sub-title wow fadeInUp">Interior Design Showcase</span>
-              <h2 className="text-anime-style-3" data-cursor="-opaque">Explore Spaces Designed for Modern Living</h2>
+              <h2 className="text-animze-style-3" data-cursor="-opaque">Explore Spaces Designed for Modern Living</h2>
+              <span style={{display:"none"}}>Interior designers in Mangalore , top Interior designers in Mangalore,best in price  </span>
             </div>
             {/* Section Title End */}
           </div>
           <div className="col-xl-6 col-md-3">
             {/* Intro Video Circle Start */}
             <div className="intro-video-circle">
-              <a href="https://www.youtube.com/watch?v=Y-x0efG1seA" className="popup-video" data-cursor-text="Play">
+              <a href="https://www.instagram.com/aktik_designs/?hl=en" className="popup-video" data-cursor-text="Play">
                 <img src="../assets/images/intro-video-circle.svg" alt />
               </a>
             </div>

@@ -101,9 +101,9 @@
 }
 
 /* Image treatment: retain the photos but soften the overlay */
-.aktik-services-images {
+/* .aktik-services-images {
     background: #e8e1d7;
-}
+} */
 
 .aktik-large-image {
     background: #e8e1d7;
@@ -332,5 +332,155 @@
     .aktik-mobile-service-card,
     .aktik-mobile-service-image img {
         transition: none !important;
+    }
+}
+
+/* =========================================
+   AKTIK SERVICES — PREVENT TEXT/IMAGE OVERLAP
+   Keep text left and images right
+========================================= */
+
+.aktik-services-sticky {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: clamp(24px, 4vw, 60px);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.aktik-services-content {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+.aktik-services-title-area {
+    display: flex;
+    align-items: stretch;
+    gap: clamp(12px, 1.5vw, 24px);
+    min-width: 0;
+    max-width: 100%;
+}
+
+.aktik-services-titles {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.aktik-service-title {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    font-size: clamp(21px, 2vw, 36px);
+}
+
+.aktik-services-description {
+    min-width: 0;
+    max-width: 100%;
+    min-height: 0;
+}
+
+.aktik-services-description p {
+    max-width: 70%;
+    overflow-wrap: break-word;
+}
+
+.aktik-services-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.aktik-highlight-tag {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
+.aktik-services-images {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.aktik-large-image {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.aktik-large-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.aktik-small-image {
+    max-width: min(75%, 340px);
+    box-sizing: border-box;
+}
+
+.aktik-small-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Laptop and smaller screens */
+@media (max-width: 1100px) {
+    .aktik-services-sticky {
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 24px;
+    }
+
+    .aktik-service-title {
+        font-size: clamp(20px, 2.2vw, 29px);
+    }
+
+    .aktik-services-description p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .aktik-services-content {
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+}
+
+/* Tablet: stack content and images instead of overlapping */
+@media (max-width: 767px) {
+    .aktik-services-sticky {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .aktik-services-content {
+        padding: 25px 20px;
+    }
+
+    .aktik-services-images {
+        width: 100%;
+    }
+
+    .aktik-service-title {
+        font-size: clamp(22px, 4vw, 30px);
+    }
+
+    .aktik-services-description {
+        margin-top: 24px;
     }
 }
