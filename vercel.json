@@ -1,9 +1,11 @@
 
+
+
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!google4f14b9261dfc10b7\\.html$).*)",
       "destination": "/index.html"
     }
   ]
