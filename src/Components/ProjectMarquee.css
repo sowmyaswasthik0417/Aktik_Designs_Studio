@@ -1,0 +1,227 @@
+/* ================================
+   AKTIK DESIGNS - PROJECT MARQUEE
+================================ */
+
+.pp-marquee {
+  --marquee-gap: 20px;
+  --marquee-speed: 38s;
+
+  width: 100%;
+  max-width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.pp-marquee *,
+.pp-marquee *::before,
+.pp-marquee *::after {
+  box-sizing: border-box;
+}
+
+.pp-marquee-row {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0 0 20px;
+}
+
+.pp-marquee-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Horizontal moving track */
+.pp-marquee-track {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: max-content;
+  max-width: none;
+  gap: 0;
+  will-change: transform;
+  animation: pp-marquee-left var(--marquee-speed) linear infinite;
+}
+
+/* Duplicate groups must have identical widths */
+.pp-marquee-group {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: stretch;
+  gap: var(--marquee-gap);
+  padding-right: var(--marquee-gap);
+}
+
+/* Move the second row in the opposite direction */
+.pp-marquee-row.is-reverse .pp-marquee-track {
+  animation-name: pp-marquee-right;
+  animation-duration: calc(var(--marquee-speed) * 1.12);
+}
+
+/* Project card */
+.pp-marquee-item {
+  position: relative;
+  display: block;
+  flex: 0 0 300px;
+  width: 300px;
+  min-width: 0;
+  height: 230px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 5px;
+  background: #eae7e1;
+  cursor: pointer;
+  text-align: left;
+  isolation: isolate;
+}
+
+.pp-marquee-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.pp-marquee-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.18) 40%,
+    transparent 72%
+  );
+  pointer-events: none;
+}
+
+.pp-marquee-item span {
+  position: absolute;
+  z-index: 2;
+  left: 18px;
+  right: 14px;
+  bottom: 17px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.pp-marquee-item:hover img {
+  transform: scale(1.06);
+}
+
+.pp-marquee-item:focus-visible {
+  outline: 3px solid #b99b6b;
+  outline-offset: -3px;
+}
+
+@keyframes pp-marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pp-marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .pp-marquee {
+    --marquee-gap: 16px;
+    --marquee-speed: 32s;
+    padding: 30px 0;
+  }
+
+  .pp-marquee-row {
+    margin-bottom: 16px;
+  }
+
+  .pp-marquee-item {
+    flex-basis: 260px;
+    width: 260px;
+    height: 210px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .pp-marquee {
+    --marquee-gap: 12px;
+    --marquee-speed: 26s;
+    padding: 22px 0;
+  }
+
+  .pp-marquee-row {
+    margin-bottom: 12px;
+  }
+
+  .pp-marquee-item {
+    flex-basis: 220px;
+    width: 220px;
+    height: 175px;
+    border-radius: 4px;
+  }
+
+  .pp-marquee-item span {
+    left: 12px;
+    right: 10px;
+    bottom: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 360px) {
+  .pp-marquee {
+    --marquee-gap: 10px;
+  }
+
+  .pp-marquee-item {
+    flex-basis: 190px;
+    width: 190px;
+    height: 155px;
+  }
+}
+
+/* Accessibility: respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .pp-marquee-track {
+    animation: none;
+    transform: none;
+  }
+
+  .pp-marquee-row {
+    overflow-x: auto;
+  }
+
+  .pp-marquee-group {
+    flex-shrink: 0;
+  }
+
+  .pp-marquee-group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .pp-marquee-item img {
+    transition: none;
+  }
+}

@@ -183,10 +183,10 @@ const categories = [
               <div className="story-item">
                 {/* Story Item Video Start */}
                 <div className="story-item-video">
-                  <a href="../assets/Projects/Mangalore/video10.mp4" className="popup-video" data-cursor-text="View">
+                  <a href="../assets/Projects/Mangalore/video11.mp4" className="popup-video" data-cursor-text="View">
                     {/* Selfhosted Video Start */}
                     {/* <video autoplay muted loop id="storyvideo4"><source src="../assets/images/livora-our-story-4-video.mp4" type="video/mp4"></video> */}
-                    <video autoPlay muted playsInline loop id="storyvideo4"><source src="../assets/Projects/Mangalore/video10.mp4" type="video/mp4" /></video>
+                    <video autoPlay muted playsInline loop id="storyvideo4"><source src="../assets/Projects/Mangalore/video11.mp4" type="video/mp4" /></video>
                     {/* Selfhosted Video End */}
                     {/* Youtube Video Start */}
                     {/* <div id="youtubevideo" class="player" data-property="{videoURL:'OjTRVpgtcG4',containment:'.intro-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> */}
