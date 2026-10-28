@@ -455,7 +455,7 @@ export const projectsdata = [
   lat: null,
   lng: null,
   instagramUrl:
-    "https://www.instagram.com/reel/DKR2k83v4NS/",
+    "https://www.instagram.com/reel/DOxkREyAQKa/?utm_source=ig_web_button_share_sheet&xtok=MzRlODBiNWFlZA==",
 },
 {
   id: "Salont",
@@ -481,6 +481,8 @@ export const projectsdata = [
 
   lat: null,
   lng: null,
+  instagramUrl:
+    "hhttps://www.instagram.com/reel/DT71ctPAcB0/?utm_source=ig_web_button_share_sheet&psln=MzRlODBiNWFlZA==",
 },
 ];
 
