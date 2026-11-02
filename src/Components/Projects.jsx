@@ -424,7 +424,7 @@ export default function ProjectsPage() {
 
       {/* Location filters */}
       {/* <div className="pp-chips"> */}
-      <MobileMarquee enabled={isMobile} speed={20} className="pp-chips">
+      <MobileMarquee enabled={isMobile} speed={30} className="pp-chips">
         <button
           className={`pp-chip ${!location ? "is-active" : ""}`}
           onClick={() =>
@@ -455,7 +455,7 @@ export default function ProjectsPage() {
 </MobileMarquee>
       {/* Category and search filters */}
       <div className="pp-filter-bar">
-        <MobileMarquee enabled={isMobile} speed={18} className="pp-filter-list">
+        <MobileMarquee enabled={isMobile} speed={27} className="pp-filter-list">
         {/* <div className="pp-filter-list"> */}
           {groups.map((group) => (
             <button
@@ -527,9 +527,11 @@ export default function ProjectsPage() {
                 aria-label={`View ${project.title}`}
               >
                 <img
-                  src={project.img}
+                  src={project.cardImg || project.img}
                   alt={project.title}
-                  loading="lazy"
+                  loading={i < 3 ? "eager" : "lazy"}
+                  fetchPriority={i === 0 ? "high" : "auto"}
+                  decoding="async"
                 />
 
                 <div className="pp-shade" />
@@ -611,10 +613,12 @@ function Empty({ title, text, onReset }) {
 function MobileMarquee({ enabled, speed = 25, className = "", children }) {
   if (!enabled) return <div className={className}>{children}</div>;
   return (
-    <div className="mq">
-      <div className={`mq-track ${className}`} style={{ animationDuration: `${speed}s` }}>
-        {children}
-        <div className="mq-copy" aria-hidden="true">{children}</div>
+    <div className={`mq ${className}`}>
+      <div className="mq-track" style={{ animationDuration: `${speed}s` }}>
+        <div className="mq-group">{children}</div>
+        <div className="mq-group mq-copy" aria-hidden="true">
+          {children}
+        </div>
       </div>
     </div>
   );

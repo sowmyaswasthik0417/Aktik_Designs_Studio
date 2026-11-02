@@ -82,6 +82,19 @@ import mngg9 from "../assets/Projects/Bangalore/mngg9.jpg";
 import mngg10 from "../assets/Projects/Bangalore/mngg10.jpg";
 import mngg11 from "../assets/Projects/Bangalore/mngg11.jpg";
 
+import mng41Card from "../assets/Projects/card-thumbnails/mng41Card.webp";
+import mngg7Card from "../assets/Projects/card-thumbnails/mngg7Card.webp";
+import mng5Card from "../assets/Projects/card-thumbnails/mng5Card.webp";
+import bngg11Card from "../assets/Projects/card-thumbnails/bngg11Card.webp";
+import bng1Card from "../assets/Projects/card-thumbnails/bng1Card.webp";
+import bng3Card from "../assets/Projects/card-thumbnails/bng3Card.webp";
+import bng4Card from "../assets/Projects/card-thumbnails/bng4Card.webp";
+import bng5Card from "../assets/Projects/card-thumbnails/bng5Card.webp";
+import bng6Card from "../assets/Projects/card-thumbnails/bng6Card.webp";
+import bng7Card from "../assets/Projects/card-thumbnails/bng7Card.webp";
+import mng1Card from "../assets/Projects/card-thumbnails/mng1Card.webp";
+import mng25Card from "../assets/Projects/card-thumbnails/mng25Card.webp";
+
 
 
 
@@ -176,6 +189,7 @@ export const projectsdata = [
   kicker: "MODERN LIVING, THOUGHTFULLY DESIGNED",
 
   img: mng41,
+  cardImg: mng41Card,
   images: [mng41, mng42, mng43, mng44],
 
   description:
@@ -203,6 +217,7 @@ export const projectsdata = [
   kicker: "MODERN LIVING",
 
   img: mngg7,
+  cardImg: mngg7Card,
   images: [
     mngg1,
     mngg2,
@@ -231,6 +246,7 @@ export const projectsdata = [
   kicker: "MODERN LIVING, THOUGHTFULLY DESIGNED",
 
   img: mng5,
+  cardImg: mng5Card,
   images: [mng3, mng4, mng5, mng6, mng7, mng8, mng9, mng10, mng11],
 
   description:
@@ -255,6 +271,7 @@ export const projectsdata = [
     kicker: "MODERN LIVING",
 
     img: bngg11,
+    cardImg: bngg11Card,
     images: [bngg11,bngg12,bngg13,bngg14,bngg15,bngg16,bngg17, bngg18,bngg19],
 
     description:
@@ -302,6 +319,7 @@ export const projectsdata = [
     kicker: "SPACES MADE FOR LIVING",
 
     img: bng1,
+    cardImg: bng1Card,
     images: [bng1,bng11,bng12,bng13,bng15,bng16,bng17,bng18],
 
     description:
@@ -324,6 +342,7 @@ export const projectsdata = [
     kicker: "MODERN LIVING",
 
     img: bng3,
+    cardImg: bng3Card,
     images: [bng3],
 
     description:
@@ -347,6 +366,7 @@ export const projectsdata = [
     kicker: "DETAILS THAT STAND OUT",
 
     img: bng4,
+    cardImg: bng4Card,
     images: [bng4],
 
     description:
@@ -370,6 +390,7 @@ export const projectsdata = [
     kicker: "YOUR PERSONAL RETREAT",
 
     img: bng5,
+    cardImg: bng5Card,
     images: [bng5],
 
     description:
@@ -393,6 +414,7 @@ export const projectsdata = [
     kicker: "DESIGNED FOR PRODUCTIVITY",
 
     img: bng6,
+    cardImg: bng6Card,
     images: [bng6],
 
     description:
@@ -416,6 +438,7 @@ export const projectsdata = [
     kicker: "TIMELESS ELEGANCE",
 
     img: bng7,
+    cardImg: bng7Card,
     images: [bng7,bng8],
 
     description:
@@ -439,6 +462,7 @@ export const projectsdata = [
   kicker: "Where Taste Meets Luxury",
 
   img: mng1, // Main image shown in the project listing
+  cardImg: mng1Card,
   images: [mng1, mng2,mng27,mng30,mng31], // Multiple project images
 
   description:
@@ -466,6 +490,7 @@ export const projectsdata = [
   kicker: "Look Sparp,Look Sharper",
 
   img: mng25, // Main image shown in the project listing
+  cardImg: mng25Card,
   images: [mng22, mng21,mng26,mng25], // Multiple project images
 
   description:  
@@ -492,4 +517,3 @@ export const projectsdata = [
 // --------------------------------------------------
 
 export const projects = projectsdata;
-

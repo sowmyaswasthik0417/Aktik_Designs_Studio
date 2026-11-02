@@ -154,7 +154,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <div>
+    <div className="testimonials-page">
       <style>{`
         /* The box automatically fits the widget's height, then crops
            a fixed amount (--crop) off the bottom, where the Elfsight
@@ -162,25 +162,166 @@ export default function Testimonials() {
 
            --crop bigger  -> more is cut off the bottom
            --crop smaller -> less is cut off the bottom           */
+        .testimonials-page .page-testimonials {
+          padding: 88px 0 96px;
+          background: linear-gradient(180deg, #f8f5ef 0%, #fff 100%);
+        }
+
+        .testimonials-page .reviews-heading {
+          max-width: 760px;
+          margin: 0 auto 34px;
+        }
+
+        .testimonials-page .reviews-heading .section-sub-title {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          color: #a27d45;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        .testimonials-page .reviews-heading .section-sub-title::before,
+        .testimonials-page .reviews-heading .section-sub-title::after {
+          width: 24px;
+          height: 1px;
+          background: #c9a96e;
+          content: "";
+        }
+
+        .testimonials-page .reviews-heading h2 {
+          max-width: 680px;
+          margin: 12px auto 0;
+          font-size: clamp(32px, 4vw, 48px);
+          line-height: 1.15;
+        }
+
+        .testimonials-page .reviews-trust-row {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 18px;
+          margin-top: 26px;
+        }
+
+        .testimonials-page .reviews-rating {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 12px 20px;
+          border: 1px solid #e8e1d4;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.82);
+          box-shadow: 0 6px 20px rgba(41, 40, 33, 0.05);
+        }
+
+        .testimonials-page .reviews-score {
+          color: #292821;
+          font-size: 26px;
+          font-weight: 700;
+          line-height: 1;
+        }
+
+        .testimonials-page .reviews-rating-copy {
+          display: grid;
+          gap: 3px;
+          color: #77766e;
+          font-size: 12px;
+          line-height: 1.2;
+          text-align: left;
+        }
+
+        .testimonials-page .reviews-stars {
+          color: #d3a33f;
+          font-size: 15px;
+          letter-spacing: 2px;
+          white-space: nowrap;
+        }
+
+        .testimonials-page .reviews-actions {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+        }
+
+        .testimonials-page .reviews-action {
+          display: inline-flex;
+          min-height: 42px;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 9px 16px;
+          border: 1px solid #dcd5c8;
+          border-radius: 999px;
+          background: #fff;
+          color: #292821;
+          font-size: 13px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+        }
+
+        .testimonials-page .reviews-action:hover {
+          transform: translateY(-2px);
+          border-color: #c9a96e;
+          background: #fbf8f1;
+          color: #292821;
+        }
+
+        .testimonials-page .reviews-action-google i {
+          color: #4285f4;
+        }
+
         .reviews-scroll-box {
           --crop: 40px;
+          --card-inset: 16px;
           min-height: 200px;
-          padding-top: 10px;
-          overflow: hidden;            /* fallback for older browsers */
-          overflow: clip;              /* blocks all scrolling */
-          border: 1px solid #e5e5e5;
-          border-radius: 16px;
-          background: #fff;
+          padding: var(--card-inset) var(--card-inset) 0;
+          box-sizing: border-box;
+          overflow: hidden;
+          overflow: clip;
+          border: 1px solid #e7e1d5;
+          border-radius: 24px;
+          background: #f4f0e8;
+          box-shadow: 0 18px 48px rgba(41, 40, 33, 0.09);
         }
 
         .reviews-scroll-inner {
-          margin-bottom: calc(var(--crop) * -1);
+          margin-bottom: calc(0px - var(--crop) - var(--card-inset));
+          overflow: hidden;
+          border-radius: 14px;
+          background: #fff;
         }
 
-        /* Mobile: change only if the badge peeks in or cards get cut */
         @media (max-width: 767px) {
+          .testimonials-page .page-testimonials {
+            padding: 56px 0 64px;
+          }
+
+          .testimonials-page .reviews-heading {
+            margin-bottom: 26px;
+          }
+
+          .testimonials-page .reviews-rating {
+            gap: 9px;
+            padding: 10px 15px;
+          }
+
+          .testimonials-page .reviews-score {
+            font-size: 23px;
+          }
+
+          .testimonials-page .reviews-action {
+            min-height: 40px;
+            padding: 8px 13px;
+            font-size: 12px;
+          }
+
           .reviews-scroll-box {
             --crop: 40px;
+            --card-inset: 10px;
+            border-radius: 18px;
           }
         }
       `}</style>
@@ -223,7 +364,7 @@ export default function Testimonials() {
           {/* Section Heading */}
           <div className="row section-row">
             <div className="col-lg-12">
-              <div className="section-title section-title-center">
+              <div className="section-title section-title-center reviews-heading">
                 <span className="section-sub-title wow fadeInUp">
                   Google Reviews
                 </span>
@@ -233,66 +374,21 @@ export default function Testimonials() {
                 </h2>
 
                 {/* Google Rating */}
-                <div
-                  style={{
-                    marginTop: "18px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: "10px",
-                    flexWrap: "wrap",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: "24px",
-                      fontWeight: "800",
-                      color: "#111",
-                    }}
-                  >
-                    5.0
-                  </span>
+                <div className="reviews-trust-row">
+                  <div className="reviews-rating" aria-label="Rated 5 out of 5 on Google">
+                    <span className="reviews-score">5.0</span>
+                    <span className="reviews-rating-copy">
+                      <span className="reviews-stars" aria-hidden="true">★★★★★</span>
+                      <span>Google Reviews</span>
+                    </span>
+                  </div>
 
-                  <span
-                    style={{
-                      color: "#fbbc04",
-                      fontSize: "22px",
-                      letterSpacing: "2px",
-                    }}
-                  >
-                    ★★★★★
-                  </span>
-
-                  <span
-                    style={{
-                      color: "#555",
-                      fontWeight: "600",
-                      fontSize: "15px",
-                    }}
-                  >
-                    Google Reviews
-                  </span>
-
-                  {/* Google Maps Button */}
+                  <div className="reviews-actions">
                   <a
                     href={GOOGLE_MAPS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "6px",
-                      marginLeft: "6px",
-                      padding: "6px 14px",
-                      background: "#4285F4",
-                      color: "#fff",
-                      borderRadius: "20px",
-                      fontSize: "13px",
-                      fontWeight: "600",
-                      textDecoration: "none",
-                      boxShadow: "0 2px 6px rgba(66,133,244,0.3)",
-                      transition: "all 0.3s ease",
-                    }}
+                    className="reviews-action reviews-action-google"
                   >
                     <i className="fa-brands fa-google"></i>
                     View on Google Maps
@@ -303,26 +399,12 @@ export default function Testimonials() {
                     href={WRITE_REVIEW_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "6px",
-                      marginLeft: "4px",
-                      padding: "6px 14px",
-                      background: "#fff",
-                      color: "#1a73e8",
-                      border: "1px solid #dadce0",
-                      borderRadius: "20px",
-                      fontSize: "13px",
-                      fontWeight: "600",
-                      textDecoration: "none",
-                      boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
-                      transition: "all 0.3s ease",
-                    }}
+                    className="reviews-action"
                   >
                     <i className="fa-solid fa-pen-to-square"></i>
                     Write a Review
                   </a>
+                  </div>
                 </div>
               </div>
             </div>
